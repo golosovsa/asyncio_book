@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "asyncio-book"
+version = "0.1.0"
+description = ""
+authors = ["grm <golosov_SA@mail.ru>"]
+readme = "README.md"
+packages = [{include = "asyncio_book"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+requests = "^2.31.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

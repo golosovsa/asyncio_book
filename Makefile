@@ -1,7 +1,7 @@
 #!make
 include secrets.env
 
-POSTGRES_DB ?= postgres
+POSTGRES_DB ?= products
 POSTGRES_USER ?= postgres
 
 run-postgres:
@@ -18,3 +18,14 @@ run-postgres:
 
 stop-postgres:
 	docker stop postgres || true && docker rm postgres || true
+
+download-ngrams:
+	wget https://storage.googleapis.com/books/ngrams/books/googlebooks-eng-all-1gram-20120701-a.gz
+	gunzip googlebooks-eng-all-1gram-20120701-a.gz
+	rm -f googlebooks-eng-all-1gram-20120701-a.gz
+
+database: run-postgres
+	python src5_3.py
+	python src5_4.py
+	python src5_5.py
+	python src5_6.py

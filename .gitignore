@@ -289,3 +289,6 @@ pyrightconfig.json
 # End of https://www.toptal.com/developers/gitignore/api/python,pycharm
 
 secrets.env
+
+googlebooks-eng-all-1gram-20120701-a.gz
+googlebooks-eng-all-1gram-20120701-a

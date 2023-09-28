@@ -7,11 +7,12 @@ readme = "README.md"
 packages = [{include = "asyncio_book"}]
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = ">=3.11,<3.13"
 requests = "^2.31.0"
 aiohttp = "^3.8.5"
 asyncpg = "^0.28.0"
 python-dotenv = "^1.0.0"
+numpy = "^1.26.0"
 
 
 [build-system]

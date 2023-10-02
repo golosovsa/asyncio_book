@@ -50,7 +50,7 @@ class ChatServer:
 
     async def _listen_for_messages(self, username: str, reader: StreamReader):
         try:
-            while (data := await asyncio.wait_for(reader.readline(), 60)) != '':
+            while (data := await asyncio.wait_for(reader.readline(), 60)) != b'':
                 await self._notify_all(f'{username}: {data.decode()}')
                 await self._notify_all(f'{username}: has left the chat\n')
         except Exception as e:
@@ -63,7 +63,7 @@ class ChatServer:
             try:
                 writer.write(message.encode())
                 await writer.drain()
-            except Exception as e:
+            except ConnectionError as e:
                 logging.exception('Ошибка при записи данных клиенту.', exc_info=e)
                 inactive_users.append(username)
         [await self._remove_user(username) for username in inactive_users]

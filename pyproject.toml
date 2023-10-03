@@ -16,6 +16,10 @@ numpy = "^1.26.0"
 flask = "^3.0.0"
 psycopg2 = "^2.9.8"
 gunicorn = "^21.2.0"
+uvicorn = "^0.23.2"
+starlette = "^0.31.1"
+websockets = "^11.0.3"
+django = "^4.2.5"
 
 
 [build-system]

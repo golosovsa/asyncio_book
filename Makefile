@@ -29,3 +29,13 @@ database: run-postgres
 	python src5_4.py
 	python src5_5.py
 	python src5_6.py
+
+database_for_10: database
+	docker cp ./src10_2.ddl postgres:/src10_2.ddl
+	docker cp ./src10_3.ddl postgres:/src10_3.ddl
+	docker exec postgres psql -U postgres -c 'CREATE DATABASE cart;'
+	docker exec postgres psql -U postgres -d cart -f '/src10_2.ddl'
+	docker exec postgres psql -U postgres -c 'CREATE DATABASE favorites;'
+	docker exec postgres psql -U postgres -d favorites -f '/src10_3.ddl'
+
+

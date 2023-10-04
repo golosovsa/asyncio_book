@@ -9,7 +9,7 @@ from aiohttp.web_request import Request
 from aiohttp.web_response import Response
 
 
-routes = web.RouteTableDef
+routes = web.RouteTableDef()
 
 
 @routes.get('/products/{id}/inventory')

@@ -20,6 +20,7 @@ uvicorn = "^0.23.2"
 starlette = "^0.31.1"
 websockets = "^11.0.3"
 django = "^4.2.5"
+beautifulsoup4 = "^4.12.2"
 
 
 [build-system]

@@ -21,6 +21,7 @@ starlette = "^0.31.1"
 websockets = "^11.0.3"
 django = "^4.2.5"
 beautifulsoup4 = "^4.12.2"
+uvloop = "^0.17.0"
 
 
 [build-system]
